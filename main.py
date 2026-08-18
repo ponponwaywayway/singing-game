@@ -19,41 +19,86 @@ words_start_th = [
     "ใน", "นอก", "นาน", "นี่", "นั่น", "หน้า", "หนู", "นึก", "บน", "บาง", "บ่", "บท", 
     "บอก", "แปลก", "ไป", "เปลี่ยน", "ปล่อย", "เป็น", "ปิด", "เปิด", "ปาก", "ปี", "ผม", "ผ่าน", 
     "ผู้", "ผิด", "ฝาก", "ฝน", "เพื่อน", "เพื่อ", "เพลง", "เพราะ", "พบ", "พี่", "พอ", 
-    "พรุ่งนี้", "เพิ่ง", "ฟัง", "แฟน", "ภาพ", "ภูมิ", "เมื่อ", "มา", "มี", "เหมือน", "มัน", "แม้", "ไม่", 
+    "พรุ่งนี้", "เพิ่ง", "ฟัง", "แฟน", "ภาพ", "ภูมิ", "เมื่อ", "มา", "มี", "เหมือน", "มัน", "ไม่", 
     "ยัง", "ยอม", "ยาม", "ยิ่ง", "ยิ้ม", "รอ", "แล้ว", "วัน", "สิ่ง", "หมด", "หยุด", "อยาก", "อยู่", "อาจ"
 ]
 
 words_start_en = [
-    "You", "I", "Baby", "Never", "When", "Don't", "If", "Why", "Every", "Look", 
-    "Please", "Tell", "Say", "Hey", "Let", "Sometimes", "Maybe", "Without", 
-    "Nobody", "Cause", "Just", "Forever", "Before", "Nothing", "Somebody", 
-    "Another", "Listen", "Remember", "Hold"
+    "you", "I", "baby", "never", "when", "don't", "if", "why", "every",
+    "look", "please", "tell", "say", "hey", "let", "sometimes", "maybe",
+    "no", "nobody", "cause", "just", "forever", "before", "nothing",
+    "somebody", "another", "listen", "remember", "hold", "do", "you",
+    "we", "they", "he", "she", "it"
 ]
 
 words_contain_th = [
     "ก็", "เก็บ", "กี่", "ก่อน", "การ", "กลับ", "เขา", "ขอ", "ความ", "คน", "แค่", 
     "คำ", "เคย", "คอย", "โคตร", "ใคร", "คุณ", "คิด", "คืน", "งาม", "เจ็บ", "จริง", "จาก", 
     "จำ", "ใจ", "จะ", "จิต", "ฉัน", "ชอบ", "เชื่อ", "ใช่", "ชีวิต", "ช่วง", "ชะตา", "ชื่น", "เด็ก", 
-    "ได้", "ดอก", "ดั่ง", "ดาว", "เดือน", "ดู", "เดี๋ยว", "ตั้งแต่", "ตอน", "ตาย", "ตื่น", "แต่", 
+    "ได้", "ดอก", "ดั่ง", "ดาว", "เดือน", "ดู", "เดี๋ยว", "ตั้งแต่", "ตอน", "ตาย", "ตื่น", "แต่", "ตะวัน",
     "ต่อ", "ตราบ", "ถ้า", "ถาม", "ถึง", "ทำไม", "ทาง", "ที่", "ท่ามกลาง", "ทำ", "ทุก", "เธอ", "ทรมาน", 
     "ใน", "นอก", "นาน", "นิทาน", "นี่", "นั่น", "หน้า", "หนู", "นึก", "บน", "บาง", "บ่", "บท", 
     "บอก", "แปลก", "ไป", "เปลี่ยน", "ปล่อย", "เป็น", "ปิด", "เปิด", "ปาก", "ปี", "ผม", "ผ่าน", 
     "ผู้", "ผิด", "ฝาก", "ฝน", "พายุ", "เพื่อน", "เพื่อ", "เพลง", "เพราะ", "พบ", "พี่", "พอ", 
-    "พรุ่งนี้", "เพิ่ง", "ฟัง", "ฟ้า", "แฟน", "ภาพ", "ภูมิ", "เมื่อ", "มา", "มี", "เหมือน", "มัน", "แม้", "ไม่", 
+    "พรุ่งนี้", "เพิ่ง", "ฟัง", "ฟ้า", "แฟน", "ภาพ", "ภูมิ", "เมื่อ", "มา", "มี", "เหมือน", "มัน", "ไม่", 
     "ยัง", "ยอม", "ยาม", "ยิ่ง", "ยิ้ม", "ยื้อ", "รอ", "ฤดู", "แล้ว", "วัน", "วิ่ง", "สิ่ง", "เสียง", "แสง", 
     "หมด", "หยุด", "หัวใจ", "อยาก", "อยู่", "อาจ"
 ]
 
 words_contain_en = [
-    "Amazing", "Admire", "Adult", "Away", "Adore", "And", "Another", "Apart", "Across", 
-    "Believe", "Bear", "Because", "Begin", "Better", "Both", "Best", "Bad", "Burn", 
-    "Cat", "Can", "Call", "Cold", "Cool", "Calm", "Sad", "Mad", "You", "I", "Baby", "Never", 
-    "When", "Don't", "If", "Why", "Every", "Look", "Please", "Tell", "Say", "Hey", "Let", 
-    "Sometimes", "Maybe", "Without", "Nobody", "Cause", "Just", "Forever", "Before", "Nothing", 
-    "Somebody", "Another", "Listen", "Remember", "Hold", "Love", "Heart", "Rain", "Night", "Tonight", 
-    "Eyes", "Sky", "Fire", "Home", "World", "Star", "Dream", "Time", "Mind", "Tears", "Dance", "Crazy", 
-    "Alone", "Sun", "Life", "Call", "Forever", "Shadow", "Magic", "Secret"
+    "amazing", "admire", "adult", "away", "adore", "and", "another", "apart", "across",
+    "believe", "bear", "because", "begin", "better", "both", "best", "bad", "burn", "cat",
+    "can", "call", "cold", "cool", "calm", "sad", "mad", "you", "I", "baby", "never", "when",
+    "don't", "if", "why", "every", "look", "please", "tell", "say", "hey", "let", "sometimes",
+    "maybe", "without", "nobody", "cause", "just", "forever", "before", "nothing", "somebody",
+    "another", "listen", "remember", "hold", "love", "heart", "rain", "night", "tonight", "eyes",
+    "sky", "fire", "home", "world", "star", "dream", "time", "mind", "tears", "dance", "crazy",
+    "alone", "sun", "life", "call", "forever", "shadow", "magic", "secret"
 ]
+
+words_jp_hiragana = {
+    "君": "きみ", "僕": "ぼく", "私": "わたし", "あなた": "あなた", "誰": "だれ",
+    "二人": "ふたり", "友達": "ともだち", "恋人": "こいびと", "誰か": "だれか",
+    "愛": "あい", "恋": "こい", "心": "こころ", "夢": "ゆめ", "想い": "おもい",
+    "優しさ": "やさしさ", "孤独": "こどく", "切ない": "せつない", "悲しい": "かなしい",
+    "嬉しい": "うれしい", "不安": "ふあん", "痛み": "いたみ", "温もり": "ぬくもり",
+    "強さ": "つよさ", "弱さ": "よわさ", "感情": "かんじょう", "歌う": "うたう",
+    "叫ぶ": "さけぶ", "泣く": "なく", "笑う": "わらう", "走る": "はしる",
+    "待つ": "まつ", "忘れる": "わすれる", "消える": "きえる", "届く": "とどく",
+    "守る": "まもる", "抱きしめる": "だきしめる", "信じる": "しんじる", "繋ぐ": "つなぐ",
+    "溢れる": "あふれる", "揺れる": "ゆれる", "見つめる": "みつめる", "さよなら": "さよなら",
+    "見上げて": "みあげて", "歩き出す": "あるきだす", "今": "いま", "明日": "あした",
+    "昨日": "きのう", "未来": "みらい", "過去": "かこ", "永遠": "えいえん",
+    "ずっと": "ずっと", "いつか": "いつか", "奇跡": "きせき", "運命": "うんめい",
+    "記憶": "きおく", "約束": "やくそく", "時間": "じかん", "瞬間": "しゅんかん",
+    "思い出": "おもいで", "秘密": "ひみつ", "夜": "よる", "空": "そら",
+    "星": "ほし", "月": "つき", "太陽": "たいよう", "光": "ひかり",
+    "影": "かげ", "風": "かぜ", "雨": "あめ", "雪": "ゆき",
+    "海": "うみ", "花": "はな", "世界": "せかい", "街": "まち",
+    "青空": "あおぞら", "夕焼け": "ゆうやけ", "朝焼け": "あさやけ", "涙": "なみだ",
+    "声": "こえ", "瞳": "ひとみ", "手": "て", "息": "いき",
+    "体温": "たいおん", "鼓動": "こどう"
+}
+
+words_cn_pinyin = {
+    "我": "wǒ", "你": "nǐ", "他": "tā", "她": "tā", "我们": "wǒmen",
+    "你们": "nǐmen", "他们": "tāmen", "宝贝": "bǎobèi", "朋友": "péngyou", "情人": "qíngrén",
+    "爱": "ài", "恨": "hèn", "心": "xīn", "喜欢": "xǐhuan", "心动": "xīndòng",
+    "心碎": "xīnsuì", "想念": "xiǎngniàn", "寂寞": "jìmò", "孤单": "gūdān", "快乐": "kuàilè",
+    "难过": "nánguò", "痛苦": "tòngkǔ", "后悔": "hòuhuǐ", "在乎": "zàihu", "感动": "gǎndòng",
+    "温柔": "wēnróu", "心疼": "xīnténg", "想": "xiǎng", "听": "tīng", "看": "kàn",
+    "说": "shuō", "等": "děng", "走": "zǒu", "留": "liú", "忘": "wàng",
+    "笑": "xiào", "哭": "kū", "拥抱": "yōngbào", "离开": "líkāi", "放弃": "fàngqì",
+    "相信": "xiāngxìn", "守护": "shǒuhù", "陪": "péi", "错过": "cuòguò", "原谅": "yuánliàng",
+    "分开": "fēnkāi", "时间": "shíjiān", "回忆": "huíyì", "从前": "cóngqián", "未来": "wèilái",
+    "现在": "xiànzài", "永远": "yǒngyuǎn", "曾经": "céngjīng", "明天": "míngtiān", "瞬间": "shùnjiān",
+    "青春": "qīngchūn", "故事": "gùshi", "承诺": "chéngnuò", "秘密": "mìmì", "最初": "zuìchū",
+    "最后": "zuìhòu", "风": "fēng", "雨": "yǔ", "雪": "xuě", "夜": "yè",
+    "光": "guāng", "海": "hǎi", "天空": "tiānkōng", "星空": "xīngkōng", "太阳": "tàiyáng",
+    "月亮": "yuèliang", "世界": "shìjiè", "梦": "mèng", "影子": "yǐngzi", "呼吸": "hūxī",
+    "温度": "wēndù", "对不起": "duìbuqǐ", "再见": "zàijiàn", "如果": "rúguǒ", "为什么": "wèishénme",
+    "不要": "búyào", "可以": "kěyǐ", "怎么": "zěnme", "没关系": "méiguānxi"
+}
 
 # ปลดล็อกขอบหน้าจอ Streamlit ให้อิสระ 100%
 st.markdown("""
@@ -111,7 +156,6 @@ html_code = f"""
         overflow-x: hidden;
     }}
 
-    /* การ์ดเกมหลัก (การ์ดบน) */
     .card {{
         width: 90%;
         max-width: 820px;
@@ -129,7 +173,6 @@ html_code = f"""
         align-items: center;
     }}
 
-    /* แถบเมนูด้านบนสุด */
     .top-bar {{
         width: 100%;
         display: flex;
@@ -149,7 +192,6 @@ html_code = f"""
         padding: 4px;
     }}
 
-    /* แถว Heading + ปุ่ม ⇄ */
     .heading-wrapper {{
         display: flex;
         align-items: center;
@@ -167,7 +209,6 @@ html_code = f"""
         white-space: nowrap;
     }}
 
-    /* ปุ่มสลับโหมด ⇄ */
     .switch-btn {{
         background: rgba(255, 255, 255, 0.75);
         color: #2D283E;
@@ -192,17 +233,17 @@ html_code = f"""
         transform: scale(1.08);
     }}
 
-    /* แถบปุ่มภาษา TH / EN */
     .lang-wrapper {{
         display: flex;
-        gap: 10px;
+        gap: 8px;
         justify-content: center;
+        flex-wrap: wrap;
     }}
 
     .lang-btn {{
         border-radius: 16px;
         font-weight: 700;
-        padding: 4px 18px;
+        padding: 4px 16px;
         font-size: 13px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.06);
         cursor: pointer;
@@ -221,7 +262,6 @@ html_code = f"""
         border: 1.5px solid #2D283E;
     }}
 
-    /* กล่องข้อความคำสุ่ม */
     .word-text {{
         flex: 1;
         width: 100%;
@@ -238,7 +278,19 @@ html_code = f"""
         transition: font-size 0.2s ease, opacity 0.2s ease;
     }}
 
-    /* สถานะเมื่อแสดงข้อความเริ่มต้น "เริ่มสุ่มคำได้เลย !" */
+    ruby {{
+        ruby-align: center;
+        ruby-position: over;
+    }}
+
+    rt {{
+        font-size: 0.35em;
+        font-weight: 600;
+        color: #7B728E;
+        letter-spacing: 0.5px;
+        transform: translateY(-5px);
+    }}
+
     .word-text.placeholder {{
         font-size: 34px;
         font-weight: 600;
@@ -246,7 +298,6 @@ html_code = f"""
         letter-spacing: 0px;
     }}
 
-    /* ปุ่มสุ่มคำใหม่ */
     .random-btn {{
         background-color: #3E3848;
         color: #FFFFFF;
@@ -268,7 +319,6 @@ html_code = f"""
         transform: scale(0.98);
     }}
 
-    /* การ์ดวิธีเล่นเกม (การ์ดแยกด้านล่าง) */
     .instruction-card {{
         width: 90%;
         max-width: 820px;
@@ -317,7 +367,6 @@ html_code = f"""
         vertical-align: baseline;
     }}
 
-    /* ----------------- Modal Popup เพิ่มคำ (ธีมสว่าง Glassmorphism) ----------------- */
     .modal-overlay {{
         position: fixed;
         top: 0; 
@@ -421,7 +470,6 @@ html_code = f"""
         background: rgba(45, 40, 62, 0.15); 
     }}
 
-    /* ----------------- กฎ Responsive สำหรับหน้าจอมือถือ (<= 600px) ----------------- */
     @media (max-width: 600px) {{
         body {{
             padding: 3vh 0 3vh 0;
@@ -486,13 +534,15 @@ html_code = f"""
     </div>
 
     <div class="heading-wrapper">
-        <div class="heading-title" id="headingText">🎤 ร้องเพลงที่ขึ้นต้นด้วยคำว่า...</div>
+        <div class="heading-title" id="headingText">🎤 ร้องเพลงที่มีคำว่า...</div>
         <button class="switch-btn" onclick="toggleMode()" title="คลิกเพื่อสลับโหมด">⇄</button>
     </div>
 
     <div class="lang-wrapper">
         <button class="lang-btn active" id="btnTH" onclick="setLang('TH')">TH</button>
         <button class="lang-btn inactive" id="btnEN" onclick="setLang('EN')">EN</button>
+        <button class="lang-btn inactive" id="btnJP" onclick="setLang('JP')">JP</button>
+        <button class="lang-btn inactive" id="btnCN" onclick="setLang('CN')">CN</button>
     </div>
 
     <div class="word-text placeholder" id="displayWord">เริ่มสุ่มคำได้เลย !</div>
@@ -500,36 +550,38 @@ html_code = f"""
     <button class="random-btn" onclick="randomWord()">สุ่มคำใหม่</button>
 </div>
 
-<!-- 2. การ์ดวิธีเล่นเกม (แยกกล่องด้านล่าง) -->
+<!-- 2. การ์ดวิธีเล่นเกม -->
 <div class="instruction-card">
     <div class="instruction-header">🎤 วิธีเล่นเกม 🎮</div>
     <ol class="instruction-list">
-        <li>เลือกโหมดระหว่าง "ร้องเพลงที่ขึ้นต้นด้วยคำว่า..." กับ "ร้องเพลงที่มีคำว่า..."</li>
+        <li>เลือกโหมดระหว่าง "ร้องเพลงที่มีคำว่า..." กับ "ร้องเพลงที่ขึ้นต้นด้วยคำว่า..."</li>
         <li>เลือกภาษาของเพลง</li>
         <li>กดปุ่มสุ่มคำใหม่</li>
         <li>หากต้องการเพิ่มคำ กดที่เมนู <span class="icon-badge">☰</span> แล้วเพิ่มคำที่ต้องการ</li>
     </ol>
 </div>
 
-<!-- Modal Popup (ธีมสว่าง) -->
+<!-- Modal Popup เพิ่มคำ -->
 <div class="modal-overlay" id="modalOverlay">
     <div class="modal-card">
         <div class="modal-title">➕ เพิ่มคำศัพท์ใหม่</div>
         
         <div class="modal-label">เลือกโหมดเกม:</div>
-        <select class="modal-select" id="addMode">
+        <select class="modal-select" id="addMode" onchange="updateModalLangOptions()">
+            <option value="contain" selected>มีคำว่า...ในเพลง</option>
             <option value="start">ขึ้นต้นด้วยคำว่า...</option>
-            <option value="contain">มีคำว่า...ในเพลง</option>
         </select>
 
         <div class="modal-label">เลือกภาษา:</div>
         <select class="modal-select" id="addLang">
             <option value="TH">ภาษาไทย (TH)</option>
             <option value="EN">English (EN)</option>
+            <option value="JP">日本語 (JP)</option>
+            <option value="CN">中文 (CN)</option>
         </select>
 
         <div class="modal-label">พิมพ์คำศัพท์ (คั่นด้วยจุลภาคได้):</div>
-        <input type="text" class="modal-input" id="addWordInput" placeholder="เช่น รัก, ฝัน, เธอ">
+        <input type="text" class="modal-input" id="addWordInput" placeholder="เช่น รัก, ฝัน หรือ 愛, 梦">
 
         <div class="modal-actions">
             <button class="modal-btn modal-close" onclick="closeModal()">ยกเลิก</button>
@@ -539,14 +591,22 @@ html_code = f"""
 </div>
 
 <script>
+    const jpDict = {json.dumps(words_jp_hiragana, ensure_ascii=False)};
+    const cnDict = {json.dumps(words_cn_pinyin, ensure_ascii=False)};
+
+    const jpKeys = Object.keys(jpDict);
+    const cnKeys = Object.keys(cnDict);
+
     const words = {{
         start_th: {json.dumps(words_start_th, ensure_ascii=False)},
         start_en: {json.dumps(words_start_en, ensure_ascii=False)},
         contain_th: {json.dumps(words_contain_th, ensure_ascii=False)},
-        contain_en: {json.dumps(words_contain_en, ensure_ascii=False)}
+        contain_en: {json.dumps(words_contain_en, ensure_ascii=False)},
+        contain_jp: jpKeys,
+        contain_cn: cnKeys
     }};
 
-    let currentMode = "start";
+    let currentMode = "contain";
     let currentLang = "TH";
 
     function resetToPrompt() {{
@@ -559,8 +619,27 @@ html_code = f"""
         const heading = document.getElementById("headingText");
         heading.innerText = currentMode === "start" ? "🎤 ร้องเพลงที่ขึ้นต้นด้วยคำว่า..." : "🎤 ร้องเพลงที่มีคำว่า...";
         
-        document.getElementById("btnTH").className = currentLang === "TH" ? "lang-btn active" : "lang-btn inactive";
-        document.getElementById("btnEN").className = currentLang === "EN" ? "lang-btn active" : "lang-btn inactive";
+        const btnJP = document.getElementById("btnJP");
+        const btnCN = document.getElementById("btnCN");
+
+        if (currentMode === "start") {{
+            btnJP.style.display = "none";
+            btnCN.style.display = "none";
+            if (currentLang === "JP" || currentLang === "CN") {{
+                currentLang = "TH";
+            }}
+        }} else {{
+            btnJP.style.display = "inline-block";
+            btnCN.style.display = "inline-block";
+        }}
+
+        const langs = ["TH", "EN", "JP", "CN"];
+        langs.forEach(lang => {{
+            const btn = document.getElementById("btn" + lang);
+            if (btn) {{
+                btn.className = currentLang === lang ? "lang-btn active" : "lang-btn inactive";
+            }}
+        }});
         
         resetToPrompt();
     }}
@@ -577,24 +656,63 @@ html_code = f"""
         }}
     }}
 
+    function displayRubyWord(text, reading) {{
+        const wordEl = document.getElementById("displayWord");
+        if (reading && reading !== text) {{
+            wordEl.innerHTML = `<ruby>${{text}}<rt>${{reading}}</rt></ruby>`;
+        }} else {{
+            wordEl.innerText = text;
+        }}
+        wordEl.classList.remove("placeholder");
+    }}
+
     function randomWord() {{
         const poolKey = `${{currentMode}}_${{currentLang.toLowerCase()}}`;
         const pool = words[poolKey];
         if (pool && pool.length > 0) {{
             const randIndex = Math.floor(Math.random() * pool.length);
-            const wordEl = document.getElementById("displayWord");
-            wordEl.innerText = pool[randIndex];
-            wordEl.classList.remove("placeholder");
+            const selected = pool[randIndex];
+            
+            if (currentLang === "JP") {{
+                displayRubyWord(selected, jpDict[selected]);
+            }} else if (currentLang === "CN") {{
+                displayRubyWord(selected, cnDict[selected]);
+            }} else {{
+                const wordEl = document.getElementById("displayWord");
+                wordEl.innerText = selected;
+                wordEl.classList.remove("placeholder");
+            }}
         }}
     }}
 
     function openModal() {{
+        document.getElementById("addMode").value = currentMode;
+        updateModalLangOptions();
+        document.getElementById("addLang").value = currentLang;
         document.getElementById("modalOverlay").style.display = "flex";
     }}
 
     function closeModal() {{
         document.getElementById("modalOverlay").style.display = "none";
         document.getElementById("addWordInput").value = "";
+    }}
+
+    function updateModalLangOptions() {{
+        const selectedMode = document.getElementById("addMode").value;
+        const addLangSelect = document.getElementById("addLang");
+        if (selectedMode === "start") {{
+            addLangSelect.innerHTML = `
+                <option value="TH">ภาษาไทย (TH)</option>
+                <option value="EN">English (EN)</option>
+            `;
+        }} else {{
+            addLangSelect.innerHTML = `
+                <option value="TH">ภาษาไทย (TH)</option>
+                <option value="EN">English (EN)</option>
+                <option value="JP">日本語 (JP)</option>
+                <option value="CN">中文 (CN)</option>
+            `;
+        }}
     }}
 
     function saveNewWords() {{
@@ -606,22 +724,30 @@ html_code = f"""
         const poolKey = `${{mode}}_${{lang}}`;
 
         const newItems = input.split(",").map(w => w.trim()).filter(w => w);
+        if (!words[poolKey]) words[poolKey] = [];
         words[poolKey].push(...newItems);
 
         currentMode = mode;
         currentLang = document.getElementById("addLang").value;
         
-        const heading = document.getElementById("headingText");
-        heading.innerText = currentMode === "start" ? "🎤 ร้องเพลงที่ขึ้นต้นด้วยคำว่า..." : "🎤 ร้องเพลงที่มีคำว่า...";
-        document.getElementById("btnTH").className = currentLang === "TH" ? "lang-btn active" : "lang-btn inactive";
-        document.getElementById("btnEN").className = currentLang === "EN" ? "lang-btn active" : "lang-btn inactive";
+        updateView();
 
-        const wordEl = document.getElementById("displayWord");
-        wordEl.innerText = newItems[newItems.length - 1];
-        wordEl.classList.remove("placeholder");
+        const lastWord = newItems[newItems.length - 1];
+        if (currentLang === "JP") {{
+            displayRubyWord(lastWord, jpDict[lastWord]);
+        }} else if (currentLang === "CN") {{
+            displayRubyWord(lastWord, cnDict[lastWord]);
+        }} else {{
+            const wordEl = document.getElementById("displayWord");
+            wordEl.innerText = lastWord;
+            wordEl.classList.remove("placeholder");
+        }}
 
         closeModal();
     }}
+
+    // เรียกฟังก์ชันครั้งแรกตอนเปิดหน้าเว็บ
+    updateView();
 </script>
 </body>
 </html>
