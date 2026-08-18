@@ -298,6 +298,15 @@ html_code = f"""
         letter-spacing: 0px;
     }}
 
+    /* แถบปุ่ม Action ด้านล่าง (สุ่ม + รีเฟรช) */
+    .btn-action-group {{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }}
+
     .random-btn {{
         background-color: #3E3848;
         color: #FFFFFF;
@@ -317,6 +326,44 @@ html_code = f"""
 
     .random-btn:active {{
         transform: scale(0.98);
+    }}
+
+    /* ปุ่มรีเฟรชไอคอนสีดำมินิมอล */
+    .refresh-btn {{
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1.5px solid rgba(45, 40, 62, 0.25);
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        transition: all 0.25s ease;
+        flex-shrink: 0;
+        padding: 0;
+    }}
+
+    .refresh-btn svg {{
+        width: 19px;
+        height: 19px;
+        fill: #2D283E;
+        transition: transform 0.3s ease;
+    }}
+
+    .refresh-btn:hover {{
+        background-color: #FFFFFF;
+        border-color: #2D283E;
+        transform: scale(1.06);
+    }}
+
+    .refresh-btn:hover svg {{
+        transform: rotate(90deg);
+    }}
+
+    .refresh-btn:active svg {{
+        transform: rotate(270deg);
     }}
 
     .instruction-card {{
@@ -507,10 +554,21 @@ html_code = f"""
         .word-text.placeholder {{
             font-size: 25px;
         }}
+        .btn-action-group {{
+            gap: 8px;
+        }}
         .random-btn {{
-            width: 85%;
+            flex: 1;
             padding: 12px 0;
             font-size: 16px;
+        }}
+        .refresh-btn {{
+            width: 44px;
+            height: 44px;
+        }}
+        .refresh-btn svg {{
+            width: 20px;
+            height: 20px;
         }}
         .instruction-card {{
             width: 92%;
@@ -547,7 +605,15 @@ html_code = f"""
 
     <div class="word-text placeholder" id="displayWord">เริ่มสุ่มคำได้เลย !</div>
 
-    <button class="random-btn" onclick="randomWord()">สุ่มคำใหม่</button>
+    <!-- ปุ่มสุ่มคำ + ปุ่มรีเฟรชคลังคำ (ไอคอนสีดำ) -->
+    <div class="btn-action-group">
+        <button class="random-btn" onclick="randomWord()">สุ่มคำใหม่</button>
+        <button class="refresh-btn" onclick="resetCurrentPool()" title="รีเซ็ตคลังคำศัพท์ (เริ่มนับใหม่)">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+            </svg>
+        </button>
+    </div>
 </div>
 
 <!-- 2. การ์ดวิธีเล่นเกม -->
@@ -556,7 +622,8 @@ html_code = f"""
     <ol class="instruction-list">
         <li>เลือกโหมดระหว่าง "ร้องเพลงที่มีคำว่า..." กับ "ร้องเพลงที่ขึ้นต้นด้วยคำว่า..."</li>
         <li>เลือกภาษาของเพลง</li>
-        <li>กดปุ่มสุ่มคำใหม่</li>
+        <li>กดปุ่มสุ่มคำใหม่ (คำที่สุ่มแล้วจะไม่ซ้ำเดิม)</li>
+        <li>กดปุ่มรีเฟรช <span class="icon-badge">รีเฟรช</span> เพื่อรีเซ็ตคลังคำศัพท์ใหม่ทั้งหมด</li>
         <li>หากต้องการเพิ่มคำ กดที่เมนู <span class="icon-badge">☰</span> แล้วเพิ่มคำที่ต้องการ</li>
     </ol>
 </div>
@@ -597,13 +664,24 @@ html_code = f"""
     const jpKeys = Object.keys(jpDict);
     const cnKeys = Object.keys(cnDict);
 
-    const words = {{
+    // คลังคำศัพท์ต้นฉบับ Master
+    const masterWords = {{
         start_th: {json.dumps(words_start_th, ensure_ascii=False)},
         start_en: {json.dumps(words_start_en, ensure_ascii=False)},
         contain_th: {json.dumps(words_contain_th, ensure_ascii=False)},
         contain_en: {json.dumps(words_contain_en, ensure_ascii=False)},
         contain_jp: jpKeys,
         contain_cn: cnKeys
+    }};
+
+    // คลังคำศัพท์สำหรับการสุ่ม (จะตัดคำที่สุ่มแล้วออก)
+    let activePools = {{
+        start_th: [...masterWords.start_th],
+        start_en: [...masterWords.start_en],
+        contain_th: [...masterWords.contain_th],
+        contain_en: [...masterWords.contain_en],
+        contain_jp: [...masterWords.contain_jp],
+        contain_cn: [...masterWords.contain_cn]
     }};
 
     let currentMode = "contain";
@@ -613,6 +691,12 @@ html_code = f"""
         const wordEl = document.getElementById("displayWord");
         wordEl.innerText = "เริ่มสุ่มคำได้เลย !";
         wordEl.classList.add("placeholder");
+    }}
+
+    function resetCurrentPool() {{
+        const poolKey = `${{currentMode}}_${{currentLang.toLowerCase()}}`;
+        activePools[poolKey] = [...masterWords[poolKey]];
+        resetToPrompt();
     }}
 
     function updateView() {{
@@ -668,10 +752,15 @@ html_code = f"""
 
     function randomWord() {{
         const poolKey = `${{currentMode}}_${{currentLang.toLowerCase()}}`;
-        const pool = words[poolKey];
+        
+        if (!activePools[poolKey] || activePools[poolKey].length === 0) {{
+            activePools[poolKey] = [...masterWords[poolKey]];
+        }}
+
+        const pool = activePools[poolKey];
         if (pool && pool.length > 0) {{
             const randIndex = Math.floor(Math.random() * pool.length);
-            const selected = pool[randIndex];
+            const selected = pool.splice(randIndex, 1)[0];
             
             if (currentLang === "JP") {{
                 displayRubyWord(selected, jpDict[selected]);
@@ -724,8 +813,12 @@ html_code = f"""
         const poolKey = `${{mode}}_${{lang}}`;
 
         const newItems = input.split(",").map(w => w.trim()).filter(w => w);
-        if (!words[poolKey]) words[poolKey] = [];
-        words[poolKey].push(...newItems);
+        
+        if (!masterWords[poolKey]) masterWords[poolKey] = [];
+        masterWords[poolKey].push(...newItems);
+
+        if (!activePools[poolKey]) activePools[poolKey] = [];
+        activePools[poolKey].push(...newItems);
 
         currentMode = mode;
         currentLang = document.getElementById("addLang").value;
@@ -746,7 +839,7 @@ html_code = f"""
         closeModal();
     }}
 
-    // เรียกฟังก์ชันครั้งแรกตอนเปิดหน้าเว็บ
+    // เริ่มต้นหน้าเว็บ
     updateView();
 </script>
 </body>
